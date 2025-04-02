@@ -1,0 +1,921 @@
+section { margin-bottom: 90px; /* Increase this value to add more space */}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
+  background-color: #181818;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* Header */
+header {
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #FFD700, #FF8C00, black);
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Navigation Links */
+nav a {
+  margin: 0 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #FFD700;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+/* Section Styles */
+.container {
+  
+  padding: 20px;
+  text-align: center;
+  opacity: 0; /* Start hidden */
+  transition: opacity 1s ease-in-out;
+  
+}
+
+.sk li{
+  background-color: #2C2C2C;
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+
+  text-shadow: yellow;
+  color: #FFD700;
+  color: black;
+     
+    padding: 40px 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+.sk li {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.sk li:hover {
+  background-color: black; /* Change this to the desired hover color */
+  color: white;
+  transform: rotate(3deg) translateY(-2px); /* Slight rotation and upward movement */
+}
+
+.sk li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,  #FFD700, #FF8C00);; /* Slight black color overlay */
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  z-index: -1; /* Ensure the overlay stays behind the text */
+}
+
+.sk li:hover::after {
+  transform: translateX(0);
+}
+
+
+.container.in-view {
+  opacity: 1; /* Fade in when in view */
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFD700;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start below */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+h2.in-view {
+  opacity: 1; /* Fade in when in view */
+  transform: translateY(0); /* Move to original position */
+}
+
+/* Decorative Underline */
+h2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #FFD700;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+h2:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* List Styles */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul li {
+  margin: 10px;
+  text-align: center;
+  width: calc(33% - 20px);
+  transition: transform 0.3s;
+}
+
+ul li:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  ul li {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  ul li {
+    width: 100%;
+  }
+}
+
+/* Project Card and Blog Post Styles */
+
+
+
+.project-card, .blog-posts article {
+  
+  background-color: #282828;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  animation: slideUp 1s ease-out;
+}
+
+.project-card:hover, .blog-posts article:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+}
+
+.project-card a{
+  color: #FFD700;
+}
+
+.project-card:hover a{
+  color: black;
+}
+
+
+
+
+
+/* Education Section */
+.education {
+  padding: 50px 20px;
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.education h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.education-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center-align the education items */
+  gap: 30px;
+}
+
+.education-item {
+  background-color: #383838;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px; /* Set width for all items */
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px white; /* Soft glowing shadow */
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  
+  
+}
+.education-item:hover h3 { 
+  color: #FFFFFF; /* Change h3 color to white */ 
+} 
+.education-item:hover p { 
+  color: #000000; /* Change p color to black */
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  color: #FFD700;
+}
+
+
+.education-item p {
+  font-size: 1rem;
+  color: #E0E0E0;
+}
+
+/* Career Objective Section */
+.career-objective {
+  padding: 50px 20px;
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.career-objective h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.career-objective-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #E0E0E0;
+}
+
+/* Certifications Section */
+/* Certifications Section */
+.certifications {
+  padding: 50px 20px;
+  background-color: #222222;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* Section Title */
+.certifications h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+/* Certification List - Grid Layout */
+.certification-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the items */
+  align-items: center; /* Aligns items properly */
+  gap: 80px; /* Adds spacing between cards */
+  max-width: 1000px; /* Prevents it from stretching too wide */
+  margin: 0 auto; /* Centers the grid */
+}
+
+/* Flip Card Container */
+.certification-item {
+  width: 250px;
+  height: 150px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner Flip Card */
+.certification-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  
+  
+}
+
+/* Flip Animation on Hover */
+.certification-item:hover .certification-inner {
+  transform: rotateY(180deg);
+   
+}
+
+
+/* Front & Back Faces */
+.certification-front,
+.certification-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  
+}
+
+/* Front Side */
+.certification-front {
+  background: #333;
+  color: #FFD700;
+}
+
+/* Back Side */
+.certification-back {
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  color: #fff;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  
+}
+
+/* Hover Effects */
+.certification-item:hover .certification-front,
+.certification-item:hover .certification-back {
+  box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
+  
+  
+}
+
+/* Fix spacing after flip */
+.certification-item .certification-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  gap: 10px; /* Ensures space between text */
+}
+
+
+
+/* Achievements Section */
+.achievements {
+  padding: 50px 20px;
+
+  color: #FFFFFF;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.achievements h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.achievements h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.achievements ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.achievements ul li {
+  
+  margin-bottom: 15px;
+  color: #E0E0E0;
+  transition: text-shadow 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+
+.achievements p:hover {
+  text-shadow: 2px 2px 8px #FFD700; /* Add hover text shadow */
+}
+
+.achievements ul li::before {
+  content: '✔';
+  margin-right: 10px;
+  color: #FFD700;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 100px;
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  color: #FFFFFF;
+  border-radius: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0%;
+}
+.form{
+  background-color: #2C2C2C;
+
+}
+.form :hover{
+  box-shadow: 10px 10px 18px black;
+
+}
+
+form input, form textarea, form button {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  display: block;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+form button {
+  background: linear-gradient(45deg, #FFD700, #FF8C00);
+
+  color: #181818;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+
+  transform: scale(1.1);
+}
+
+form input:hover, form textarea:hover {
+  border: 2px solid #FFD700;
+  box-shadow: 0 4px 15px #FFD700; /* Add shadow on hover */
+}
+
+
+/* About Section */
+.about {
+  padding: 90px 80px;
+  color: #FFFFFF;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #FFD700;
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateX(-150%); /* Initial position for heading */
+  animation: slideInSmooth 1s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Starts with no width */
+  height: 3px;
+  background-color: #FFD700;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  animation: expandLine 0.8s ease-out forwards;
+  animation-delay: 1s; /* Line animation after heading appears */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px; /* Increase space between the image and text */
+  padding: 20px;
+  padding-left: 110px;
+  animation: slideInSmooth 1s ease-out forwards;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 450px; /* Maximum width for large screens */
+  height: auto;
+  aspect-ratio: 9 / 11; /* Maintains proportional scaling */
+  border-radius: 100px 250px; /* Unique curved shape */
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(-150%) scale(0.8); /* Initial animation */
+  transition: transform 0.3s ease, box-shadow 0.6s ease-in-out;
+}
+
+/* Make image visible after first animation */
+.about-img-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  animation: none;
+}
+
+/* Hover effect only for DESKTOP */
+@media (hover: hover) and (pointer: fine) {
+  .about-img:hover {
+    transform: scale(1.1);
+    animation: shadowRotate 3.5s linear infinite;
+  }
+}
+
+/* Always apply shadow animation on MOBILE & TABLET */
+@media (hover: none), (pointer: coarse) {
+  .about-img {
+    animation: shadowRotate 1.5s linear infinite;
+  }
+}
+
+/* Brighter Rotating Shadow */
+@keyframes shadowRotate {
+  0% {
+    box-shadow: 15px 15px 35px #FF8C00;
+  }
+  25% {
+    box-shadow: -15px 15px 35px #FFD700;
+  }
+  50% {
+    box-shadow: -15px -15px 35px #FF8C00;
+  }
+  75% {
+    box-shadow: 15px -15px 35px #FFD700;
+  }
+  100% {
+    box-shadow: 15px 15px 35px #FF8C00;
+  }
+}
+
+/* Responsive Image Sizing */
+@media screen and (max-width: 1024px) { /* Tablets */
+  .about-img {
+    max-width: 350px;
+    border-radius: 80px 200px; /* Adjust shape for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) { /* Mobile */
+  .about-img {
+    max-width: 280px;
+    border-radius: 70px 170px;
+  }
+}
+
+@media screen and (max-width: 480px) { /* Small Mobile */
+  .about-img {
+    max-width: 220px;
+    border-radius: 60px 150px;
+  }
+}
+
+
+.about .text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  transform: translateX(-150%) scale(0.8); /* Smooth initial position */
+  opacity: 0;
+  animation: slideInSmooth 1s ease-out forwards;
+  animation-delay: 0.5s; /* Staggered animation for the text */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 20px; /* Adjust gap for smaller screens */
+  }
+
+  .about-img {
+    width: 200px; /* Adjust image size for smaller screens */
+    transform: translateX(0) scale(1); /* Reset transformation */
+  }
+
+  .about .text {
+    transform: translateX(0) scale(1); /* Reset transformation */
+  }
+
+  h2 {
+    font-size: 2rem; /* Adjust h2 font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem; /* Further reduce font size for mobile */
+  }
+
+  .about-img {
+    width: 150px; /* Further adjust image size for mobile */
+  }
+}
+
+/* Keyframes for Smooth Animations */
+@keyframes slideInSmooth {
+  from {
+    transform: translateX(-150%) scale(0.8); /* Start from far left and smaller */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1); /* End at original size and position */
+    opacity: 1;
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Additional Gradient Animation for Header */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+footer {
+  text-align: center;
+  border-radius: 5px; /* Rounded corners */
+  padding: 20px; /* Spacing inside the box */
+  margin: 10px 0; /* Spacing between items */
+  background: linear-gradient(45deg, black,#FF8C00, #FFD700);
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
+}
+
+footer:hover {
+  transform: translateY(-5px); /* Move item up on hover */
+  
+
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Font size for copyright text */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+
+
+.social-icons {
+  margin-top: 10px; /* Space above icons */
+}
+
+.social-icons a {
+  color: #fff; /* White color for icons */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Spacing between icons */
+  transition: transform 0.3 s ease; /* Smooth transform transition */
+}
+
+.social-icons a:hover {
+  transform: scale(1.2); /* Enlarge icon on hover */
+  box-shadow: 10px 0px 10px rgb(0, 0, 0); /* Soft glowing shadow */
+
+}
+
+.social-icons img {
+  width: 20px; /* Set width for images */
+  height: 20px; /* Set height for images */
+  transition: filter 0.3s ease; /* Smooth filter transition */
+}
+
+.social-icons a:hover img {
+  filter: brightness(1.2); /* Brighten image on hover */
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+
+h2 {
+  font-size: 2.5rem; /* Adjust the size as needed */
+  color: #FFD700; /* Consistent color */
+  font-weight: 700; /* Consistent font weight */
+  margin-bottom: 20px; /* Consistent margin */
+  position: relative; /* Consistent position */
+  display: inline-block; /* Consistent display */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(50px); /* Start below for animation */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+}
+
+h2.in-view {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+}
+
+
+/**/
+
+
+
+/* About 2 */
+
+#scrollToDownBtn {
+  
+  position: fixed;
+  top: 80px;
+  left: 0px;
+  background-color: #FF8C00;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 18px;
+  padding: 15px; /* Add some padding */
+  border-radius: 100px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  z-index: 99;
+}
+
+/* Hover Effect */
+#scrollToDownBtn:hover {
+  background: linear-gradient(45deg, #FFD700, #FF8C00);
+  transform: rotateX(-360deg);
+}
+
+/* Hide the button when already at the bottom */
+@media screen and (max-width: 768px) {
+  #scrollToDownBtn {
+      padding: 10px 14px;
+      font-size: 16px;
+  }
+}
+
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position at the bottom right corner */
+  bottom: 20px; /* 20px from the bottom */
+  right: 30px; /* 30px from the right */
+  z-index: 99; /* Ensure it stays on top */
+  font-size: 18px; /* Increase font size */
+  border: none; /* No border */
+  outline: none; /* No outline */
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  color: black; /* White text */
+  cursor: pointer; /* Pointer/hand icon */
+  padding: 15px; /* Add some padding */
+  border-radius: 100px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Add smooth transition */
+  
+}
+
+#scrollToTopBtn:hover {
+  background: linear-gradient(45deg, #FFD700, #FF8C00);
+  transform: scale(2.0) rotateX(-360deg); /* Scales and flips horizontally on hover */
+}
+
+
+/* Show button when scrolling down */
+body {
+  height: 2000px; /* Temporary height to enable scrolling */
+}
+
+#scrollToTopBtn.show {
+  display: block;
+}
+
+
+:root {
+  /* Light Theme Colors */
+  --background-color-light: #181818;
+  --text-color-light: White;
+  --primary-color-light: #FFD700;
+  --secondary-color-light: #2C2C2C;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Colors */
+  --background-color-dark: #181818;
+  --text-color-dark: #FFFFFF;
+  --primary-color-dark: #FFD700;
+  --secondary-color-dark: #2C2C2C;
+}
+
+/* Skills List */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+  background-color: var(--secondary-color-light); /* Default to light theme */
+  color: var(--text-color-light); /* Default to light theme */
+  
+}
+
+[data-theme="dark"] .skills-list {
+  background-color: var(--secondary-color-dark); /* Dark theme */
+  color: var(--text-color-dark); /* Dark theme */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+}
+
+/* General Styles for Consistency */
+body {
+  background-color: var(--background-color-light); /* Default to light theme */
+  color: var(--text-color-light); /* Default to light theme */
+}
+
+[data-theme="dark"] body {
+  background-color: var(--background-color-dark); /* Dark theme */
+  color: var(--text-color-dark); /* Dark theme */
+}
+
+
+/* NEW */
+
+.ct, .form{
+  background-color: #222222 ;
+  padding-bottom: 1px;
+}
+
+/* */
+
