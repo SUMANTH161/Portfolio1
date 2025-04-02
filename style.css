@@ -2,6 +2,7 @@ section { margin-bottom: 90px; /* Increase this value to add more space */}
 
 /* Global Styles */
 body {
+  
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #FFFFFF;
@@ -440,58 +441,183 @@ ul li:hover {
 }
 
 /* Form Styles */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 100px;
+
+/* General Styles for the Contact Section */
+/* Contact Section Styles */
+/* Contact Section Styles */
+#contact {
+  background-color: #222222; /* Light gray background */
+  padding: 20px; /* Padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align the content horizontally */
+}
+
+/* Contact Section Heading Styles */
+#contact h2 {
+  color: #FFD700; /* Dark text color */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  width: 100%; /* Ensure the heading takes full width */
+}
+
+/* Contact Form Styles */
+
+
+#contactForm {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align the form */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners for the border */
+  padding: 20px; /* Padding inside the form for spacing */
   background: linear-gradient(45deg, #FF8C00, #FFD700);
-  color: #FFFFFF;
-  border-radius: 100px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 0%;
-}
-.form{
-  background-color: #2C2C2C;
-
-}
-.form :hover{
-  box-shadow: 10px 10px 18px black;
-
+  width: 100%; /* Full width of the parent container */
+  max-width: 500px; /* Maximum width for larger screens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 0 auto; /* Center the form horizontally */
+  color: black;
+  text-align: left;
+  border-radius: 10%;
 }
 
-form input, form textarea, form button {
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  display: block;
-  transition: border 0.3s, box-shadow 0.3s;
+/* Contact Form Label Styles */
+#contactForm label {
+  align-items: center;
+  margin-bottom: 5px; /* Space below labels */
+  font-weight: bold; /* Bold labels */
 }
 
-form button {
+/* Contact Form Input and Textarea Styles */
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  padding: 10px; /* Padding inside input fields */
+  margin-bottom: 15px; /* Space below each input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for inputs */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Contact Form Button Styles */
+#contactForm button {
+  background-color: #333; /* Dark background for button */
+  color: black; /* White text */
+  border: none; /* No border */
+  padding: 10px; /* Padding inside button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for button */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Contact Form Button Hover Effect */
+#contactForm button:hover {
+  background-color: #555; /* Darker background on hover */
+  box-shadow: 5px 4px 5px 1px black;
+
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #contact {
+      padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm textarea {
+      font-size: 14px; /* Smaller font size for inputs */
+  }
+
+  #contactForm button {
+      font-size: 14px; /* Smaller font size for button */
+  }
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: black; /* Darker border color on focus */
+    box-shadow: 5px 4px 5px 1px black;
+    outline: none; /* Remove default outline */
+}
+
+/* Heading Styles */
+h2 {
+  color: rgb(0, 0, 0); /* Yellow color for the heading */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 200px; /* Space below the heading */
+}
+
+/* Form Styles */
+form {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Label Styles */
+label {
+  margin-bottom: 5px; /* Space below labels */
+  font-weight: bold; /* Bold labels */
+}
+
+
+/* Input and Textarea Styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px; /* Padding inside input fields */
+  margin-bottom: 15px; /* Space below each input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for inputs */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Button Styles */
+button {
   background: linear-gradient(45deg, #FFD700, #FF8C00);
 
-  color: #181818;
-  font-family: 'Montserrat', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  color: black; /* White text */
+  border: none; /* No border */
+  padding: 10px; /* Padding inside button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for button */
+  transition: background-color 0.3s; /* Smooth transition for hover */
 }
 
-form button:hover {
+/* Button Hover Effect */
+button:hover {
   background: linear-gradient(45deg, #FF8C00, #FFD700);
 
-  transform: scale(1.1);
 }
 
-form input:hover, form textarea:hover {
-  border: 2px solid #FFD700;
-  box-shadow: 0 4px 15px #FFD700; /* Add shadow on hover */
+/* Required Indicator Styles */
+.required {
+  color: red; /* Red color for required indicator */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .section {
+      padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+      font-size: 14px; /* Smaller font size for inputs */
+  }
+
+  button {
+      font-size: 14px; /* Smaller font size for button */
+  }
 }
 
 
@@ -779,26 +905,24 @@ h2.in-view {
 /* About 2 */
 
 #scrollToDownBtn {
-  
   position: fixed;
-  top: 80px;
-  left: 0px;
-  background-color: #FF8C00;
-  color: white;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(45deg, #FF8C00, #FFD700);
+  color: black;
   border: none;
   padding: 12px 16px;
   font-size: 18px;
-  padding: 15px; /* Add some padding */
-  border-radius: 100px; 
+  border-radius: 100px;
+  cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, transform 0.2s ease-in-out;
-  z-index: 99;
+  transition: background-color 0.3s, transform 0.3s; /* Add smooth transition */
 }
 
 /* Hover Effect */
 #scrollToDownBtn:hover {
   background: linear-gradient(45deg, #FFD700, #FF8C00);
-  transform: rotateX(-360deg);
+  transform: scale(1.5) rotateX(-360deg);
 }
 
 /* Hide the button when already at the bottom */
@@ -918,4 +1042,22 @@ body {
 }
 
 /* */
+
+#home {
+  background-image: url('abstract-technology-cyber-concept-vector-background_115579-1416.jpg'); /* Path to your background image */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 100vh; /* Set the height of the section */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  color: white; /* Text color for better contrast against the background */
+  margin-bottom: 0%;
+}
+
+.about-content {
+  text-align: center; /* Center align the text */
+  z-index: 1; /* Ensure content is above the background */
+}
 
